@@ -3,5 +3,3 @@ pandas
 plotly
 matplotlib
 seaborn
-statistics
-numbers
