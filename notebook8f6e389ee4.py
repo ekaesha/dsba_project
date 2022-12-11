@@ -26,8 +26,8 @@ st.markdown("""Let's start with a general overview. Let's see what the dataset i
 data.head(10)
 
 
-print("Rows & Columns")
-print(data.shape)
+st.write("Rows & Columns")
+st.write(data.shape)
 
 
 st.markdown("""In total, this dataset has 607 rows and 12 columns. Let's figure out what each line is responsible for and whether its values are unique.""")
@@ -39,10 +39,10 @@ fig = px.imshow(data.corr(), text_auto=True)
 fig.show()
 
 
-print('Оutput the data in the format:')
-print('type', '&', 'unique el', '&', 'col name')
+st.write('Оutput the data in the format:')
+st.write('type', '&', 'unique el', '&', 'col name')
 for col in data:
- print(data[col].dtypes, '-', len(data[col].unique()), '-', col)
+ st.write(data[col].dtypes, '-', len(data[col].unique()), '-', col)
 
 
 st.markdown("""You can see that each row contains unique values. Let's check the presence of zeros in each row.""")
@@ -63,20 +63,20 @@ st.markdown("""Let's display the number of columns and the straw and see that in
 
 
 
-print("Rows & Columns")
-print(data.shape)
+st.write("Rows & Columns")
+st.write(data.shape)
 data.head(5)
 
 
 st.markdown("""Let us consider in more detail what each column and row are responsible for and what parameters they have.""")
 
 
-print(f"Based on the data obtained above 'work_year' has 3 unique values. Consider them")
+st.write(f"Based on the data obtained above 'work_year' has 3 unique values. Consider them")
 data.work_year.unique()
 
 
-print("Let's look and find out also specific values 'employment_type' 'remote_ratio.unique', 'experience_year'")
-print('', *data.remote_ratio.unique(), '\n',*data.employment_type.unique(), '\n', *data.experience_level.unique(), '\n', *data.company_size.unique())
+st.write("Let's look and find out also specific values 'employment_type' 'remote_ratio.unique', 'experience_year'")
+st.write('', *data.remote_ratio.unique(), '\n',*data.employment_type.unique(), '\n', *data.experience_level.unique(), '\n', *data.company_size.unique())
 
 st.markdown("""Let's describe what each parameter means.
 
@@ -122,9 +122,9 @@ st.title('Statistics')
 st.markdown("""In the following lines mean, median and standard deviation on statistics on salary are presented.""")
 
 
-print('Mean total salaries (in $):',data['salary_in_usd'].mean())
-print('Median total salaries (in $):',data['salary_in_usd'].median())
-print("Standard Deviation of the salary is % s "%(statistics.stdev(data['salary_in_usd'])))
+st.write('Mean total salaries (in $):',data['salary_in_usd'].mean())
+st.write('Median total salaries (in $):',data['salary_in_usd'].median())
+st.write("Standard Deviation of the salary is % s "%(statistics.stdev(data['salary_in_usd'])))
 
 
 st.title('Data Transformation')
@@ -136,17 +136,17 @@ st.markdown("""To implement this, we will first calculate the mean of the salary
 
 
 med_salary = data['salary_in_usd'].mean()
-print(med_salary)
+st.write(med_salary)
 
 
 st.markdown("""To make dataset more convinient to look at, let's add the column called 'salary_ratio'.""")
 
 
 data = data.assign(salary_ratio = data.salary_in_usd / med_salary)
-data
+st.write(data)
 
 data = data.assign(salary_level = 'a')
-data
+st.write(data)
 
 
 st.markdown("""Then, it is logically to add a column with the level of salary. If the index of 'salary_ratio' is lower than 0.75, then the value of 'salary level' will take on the meaning 'low', if higher than 0,75 and less than 1.25 - 'medium', if higher than 1.25 - 'high'.""")
@@ -154,7 +154,7 @@ st.markdown("""Then, it is logically to add a column with the level of salary. I
 data.loc[(data['salary_ratio'] < 0.75), 'salary_level'] = 'low'
 data.loc[(data['salary_ratio'] >= 0.75) & (data['salary_ratio'] <= 1.25), 'salary_level'] = 'medium'
 data.loc[(data['salary_ratio'] > 1.25), 'salary_level'] = 'high'
-data
+st.write(data)
 
 
 st.markdown("""Now, we have obtained our dataset, so it has two new columns. Let's make a hypothesis: the 'high' salary has increased over the period from 2020 to 2022.""")
