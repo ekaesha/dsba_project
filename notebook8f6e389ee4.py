@@ -13,7 +13,7 @@ hide_menu_style = """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 
-data = pd.read_csv('/kaggle/input/data-science-job-salaries/ds_salaries.csv')
+data = pd.read_csv('ds_salaries.csv')
 
 
 st.markdown("""The remaining dateset called 'Data Science Job Salaries' includes the data on the salaries of jobs in the Data Science domain. Next, an analysis of the columns and rows of this dataset can be found and graphs containing all the relevant information will be presented.""")
