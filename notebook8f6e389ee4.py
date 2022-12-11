@@ -125,7 +125,7 @@ st.markdown("""In the following lines mean, median and standard deviation on sta
 
 st.write('Mean total salaries (in $):',data['salary_in_usd'].mean())
 st.write('Median total salaries (in $):',data['salary_in_usd'].median())
-#st.write("Standard Deviation of the salary is % s "%(statistics.stdev(data['salary_in_usd'])))
+st.write("Standard Deviation of the salary is % s "%(statistics.stdev(data['salary_in_usd'])))
 
 
 st.title('Data Transformation')
@@ -298,4 +298,5 @@ y='salary_in_usd',
 trendline="ols",
 title='Correlation between Remote Ratio and Salary in USD')
 st.plotly_chart(fig)
+
 st.markdown("""It is clear that the positive correlation shows, that the later hypothesis is true.""")
