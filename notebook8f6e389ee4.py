@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
+import statistics
 sns.set_theme()
 hide_menu_style = """
         <style>
