@@ -16,6 +16,7 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 data = pd.read_csv('ds_salaries.csv')
 
 
+st.title('JOB SALARIES')
 st.markdown("""The remaining dateset called 'Data Science Job Salaries' includes the data on the salaries of jobs in the Data Science domain. Next, an analysis of the columns and rows of this dataset can be found and graphs containing all the relevant information will be presented.""")
 
 st.title('DS overview')
@@ -130,7 +131,7 @@ st.write("Standard Deviation of the salary is % s "%(statistics.stdev(data['sala
 st.title('Data Transformation')
 
 st.markdown("""One of the most important sets of information is the salary level. Thus, one more column can be added to this dataset, generalizing and characterizing the index, which is responsible for the amount of money received for the work.""")
-# 
+
 
 st.markdown("""To implement this, we will first calculate the mean of the salary and print it.""")
 
