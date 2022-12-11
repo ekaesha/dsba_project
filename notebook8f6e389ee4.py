@@ -18,7 +18,7 @@ data = pd.read_csv('ds_salaries.csv')
 
 
 st.title('JOB SALARIES')
-st.markdown("""The remaining dateset called 'Data Science Job Salaries' includes the data on the salaries of jobs in the Data Science domain. Next, an analysis of the columns and rows of this dataset can be found and graphs containing all the relevant information will be presented.""")
+st.markdown("""The remaining dataset called 'Data Science Job Salaries' includes the data on the salaries of jobs in the Data Science domain. Next, an analysis of the columns and rows of this dataset can be found and graphs containing all the relevant information will be presented.""")
 
 st.title('DS overview')
 
@@ -209,7 +209,7 @@ fig = px.bar(y=exp_lvl.values,
              color = exp_lvl.index,
              color_discrete_sequence=px.colors.sequential.Magma_r,
              text=exp_lvl.values,
-             title= 'Professionals on each lecel',
+             title= 'Professionals on each level',
              template= 'plotly_white')
 
 fig.update_layout(
